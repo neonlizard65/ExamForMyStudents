@@ -1,0 +1,29 @@
+﻿<Page x:Class="Exam.Pages.QuestionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Exam.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="QuestionPage">
+
+    <StackPanel>
+        <Label x:Name="indexLbl"></Label>
+        <TextBlock TextWrapping="Wrap" x:Name="QuestionLbl" Text="{Binding Question}" FontSize="24" Margin="5"></TextBlock>
+        <Image x:Name="Img" Height="700" Width="900" Visibility="Collapsed"></Image>
+        <StackPanel>
+            <RadioButton GroupName="Choices" x:Name="Choice1" Content="{Binding Choice1}" Checked="Choice1_Checked"></RadioButton>
+            <RadioButton GroupName="Choices" x:Name="Choice2" Content="{Binding Choice2}" Checked="Choice2_Checked"></RadioButton>
+            <RadioButton GroupName="Choices" x:Name="Choice3" Content="{Binding Choice3}" Checked="Choice3_Checked"></RadioButton>
+            <RadioButton GroupName="Choices" x:Name="Choice4" Content="{Binding Choice4}" Checked="Choice4_Checked"></RadioButton>
+            <RadioButton GroupName="Choices" x:Name="Choice5" Content="{Binding Choice5}" Checked="Choice5_Checked"></RadioButton>
+            <TextBox x:Name="exText" Visibility="Collapsed" Text="{Binding UserAnswer}" TextWrapping="Wrap" AcceptsReturn="True" Height="Auto" Width="Auto" Margin="5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="Previous" Content="Назад" Click="Previous_Click"></Button>
+            <Button x:Name="Next" Content="Далее" Click="Next_Click"></Button>
+            <Button x:Name="Finish" Content="Отправить тест" Click="Finish_Click" Visibility="Collapsed" Width="150"></Button>
+        </StackPanel>
+    </StackPanel>
+</Page>
